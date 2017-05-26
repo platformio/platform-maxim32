@@ -1,6 +1,6 @@
 # Maxim 32: development platform for [PlatformIO](http://platformio.org)
 [![Build Status](https://travis-ci.org/platformio/platform-maxim32.svg?branch=develop)](https://travis-ci.org/platformio/platform-maxim32)
-[![Build status](https://ci.appveyor.com/api/projects/status/gbf7v0d19qir2o05/branch/develop?svg=true)](https://ci.appveyor.com/project/ivankravets/platform-maxim32/branch/develop)
+[![Build status](https://ci.appveyor.com/api/projects/status/y68d460xhxm2rx2o/branch/develop?svg=true)](https://ci.appveyor.com/project/ivankravets/platform-maxim32/branch/develop)
 
 Maxim's microcontrollers provide low-power, efficient, and secure solutions for challenging embedded applications. Maxim's processors embed cutting-edge technologies to secure data and intellectual property, proven analog circuitry for real-world applications, and battery-conserving low power operation.  
 
