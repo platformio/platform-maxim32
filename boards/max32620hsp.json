@@ -1,0 +1,17 @@
+{
+  "build": {
+    "cpu": "cortex-m4",
+    "f_cpu": "96000000L",
+    "mcu": "max32620"
+  },
+  "frameworks": [
+    "mbed"
+  ],
+  "name": "Maxim Health Sensor Platform",
+  "upload": {
+    "maximum_ram_size": 262144,
+    "maximum_size": 2097152
+  },
+  "url": "https://developer.mbed.org/platforms/MAX32620HSP/",
+  "vendor": "Maxim"
+}

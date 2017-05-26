@@ -1,0 +1,17 @@
+{
+  "build": {
+    "cpu": "cortex-m3",
+    "f_cpu": "24000000L",
+    "mcu": "max32600"
+  },
+  "frameworks": [
+    "mbed"
+  ],
+  "name": "Maxim ARM mbed Enabled Development Platform for MAX32600",
+  "upload": {
+    "maximum_ram_size": 32768,
+    "maximum_size": 262144
+  },
+  "url": "https://developer.mbed.org/platforms/MAX32600mbed/",
+  "vendor": "Maxim"
+}
