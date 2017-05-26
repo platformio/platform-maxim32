@@ -1,0 +1,43 @@
+{
+  "name": "maxim32",
+  "title": "Maxim 32",
+  "description": "Maxim's microcontrollers provide low-power, efficient, and secure solutions for challenging embedded applications. Maxim's processors embed cutting-edge technologies to secure data and intellectual property, proven analog circuitry for real-world applications, and battery-conserving low power operation.",
+  "url": "https://www.maximintegrated.com/en/products/digital/microcontrollers.html",
+  "homepage": "http://platformio.org/platforms/maxim32",
+  "license": "Apache-2.0",
+  "engines": {
+    "platformio": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/platformio/platform-maxim32.git"
+  },
+  "version": "0.0.0",
+  "packageRepositories": [
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
+    "https://sourceforge.net/projects/platformio-storage/files/packages/manifest.json/download",
+    "http://dl.platformio.org/packages/manifest.json"
+  ],
+  "frameworks": {
+    "mbed": {
+      "package": "framework-mbed",
+      "script": "builder/frameworks/mbed/mbed.py"
+    }
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "version": ">=1.40803.0,<1.40805.0"
+    },
+    "framework-mbed": {
+      "type": "framework",
+      "optional": true,
+      "version": "~3.142.0"
+    },
+    "tool-openocd": {
+      "type": "debugger",
+      "optional": true,
+      "version": "~1.1000.0"
+    }
+  }
+}

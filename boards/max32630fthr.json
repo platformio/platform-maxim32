@@ -1,0 +1,17 @@
+{
+  "build": {
+    "cpu": "cortex-m4f",
+    "f_cpu": "96000000L",
+    "mcu": "max32630"
+  },
+  "frameworks": [
+    "mbed"
+  ],
+  "name": "Maxim MAX32630FTHR Application Platform",
+  "upload": {
+    "maximum_ram_size": 524288,
+    "maximum_size": 2097152
+  },
+  "url": "https://developer.mbed.org/platforms/MAX32630FTHR/",
+  "vendor": "Maxim"
+}
