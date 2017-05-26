@@ -1,6 +1,6 @@
 {
   "build": {
-    "cpu": "cortex-m4f",
+    "cpu": "cortex-m4",
     "f_cpu": "96000000L",
     "mcu": "max32620"
   },
