@@ -4,6 +4,9 @@
     "f_cpu": "24000000L",
     "mcu": "max32610"
   },
+  "connectivity": [
+    "bluetooth"
+  ],
   "frameworks": [
     "mbed"
   ],
