@@ -10,7 +10,11 @@
   "name": "MAX32625MBED",
   "upload": {
     "maximum_ram_size": 163840,
-    "maximum_size": 524288
+    "maximum_size": 524288,
+    "protocol": "mbed",
+    "protocols": [
+      "mbed"
+    ]
   },
   "url": "https://os.mbed.com/platforms/MAX32625MBED/",
   "vendor": "Maxim"

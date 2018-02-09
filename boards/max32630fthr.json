@@ -10,7 +10,11 @@
   "name": "Maxim MAX32630FTHR Application Platform",
   "upload": {
     "maximum_ram_size": 524288,
-    "maximum_size": 2097152
+    "maximum_size": 2097152,
+    "protocol": "mbed",
+    "protocols": [
+      "mbed"
+    ]
   },
   "url": "https://developer.mbed.org/platforms/MAX32630FTHR/",
   "vendor": "Maxim"

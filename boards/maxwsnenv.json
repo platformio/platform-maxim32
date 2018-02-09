@@ -7,13 +7,33 @@
   "connectivity": [
     "bluetooth"
   ],
+  "debug": {
+    "tools": {
+      "cmsis-dap": {
+        "server": {
+          "arguments": [
+            "pyocd-gdbserver.py",
+            "-t",
+            "maxwsnenv"
+          ],
+          "executable": "$PYTHONEXE",
+          "package": "tool-pyocd"
+        }
+      }
+    }
+  },
   "frameworks": [
     "mbed"
   ],
   "name": "Maxim Wireless Sensor Node Demonstrator",
   "upload": {
     "maximum_ram_size": 32768,
-    "maximum_size": 262144
+    "maximum_size": 262144,
+    "protocol": "mbed",
+    "protocols": [
+      "cmsis-dap",
+      "mbed"
+    ]
   },
   "url": "https://developer.mbed.org/platforms/MAXWSNENV/",
   "vendor": "Maxim"
