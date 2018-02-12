@@ -19,3 +19,15 @@ class Maxim32Platform(PlatformBase):
 
     def is_embedded(self):
         return True
+
+    def configure_default_packages(self, variables, targets):
+        if variables.get("board"):
+            upload_protocol = variables.get("upload_protocol",
+                                            self.board_config(
+                                                variables.get("board")).get(
+                                                    "upload.protocol", ""))
+            if upload_protocol == "cmsis-dap":
+                self.packages['tool-pyocd']['type'] = "uploader"
+
+        return PlatformBase.configure_default_packages(self, variables,
+                                                       targets)
