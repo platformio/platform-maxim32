@@ -1,0 +1,21 @@
+{
+  "build": {
+    "cpu": "cortex-m4",
+    "f_cpu": "96000000L",
+    "mcu": "max32620fthr"
+  },
+  "frameworks": [
+    "mbed"
+  ],
+  "name": "MAX32620FTHR",
+  "upload": {
+    "maximum_ram_size": 262144,
+    "maximum_size": 2097152,
+    "protocol": "mbed",
+    "protocols": [
+      "mbed"
+    ]
+  },
+  "url": "https://www.maximintegrated.com/en/products/microcontrollers/MAX32620FTHR.html",
+  "vendor": "Maxim"
+}
