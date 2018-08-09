@@ -33,34 +33,6 @@ env.Replace(
 
     ARFLAGS=["rc"],
 
-    ASFLAGS=["-x", "assembler-with-cpp"],
-
-    CCFLAGS=[
-        "-Os",  # optimize for size
-        "-ffunction-sections",  # place each function in its own section
-        "-fdata-sections",
-        "-Wall",
-        "-mthumb",
-        "-nostdlib"
-    ],
-
-    CXXFLAGS=[
-        "-fno-rtti",
-        "-fno-exceptions"
-    ],
-
-    CPPDEFINES=[
-        ("F_CPU", "$BOARD_F_CPU")
-    ],
-
-    LINKFLAGS=[
-        "-Os",
-        "-Wl,--gc-sections,--relax",
-        "-mthumb"
-    ],
-
-    LIBS=["c", "gcc", "m"],
-
     SIZEPROGREGEXP=r"^(?:\.text|\.data|\.rodata|\.text.align|\.ARM.exidx)\s+(\d+).*",
     SIZEDATAREGEXP=r"^(?:\.data|\.bss|\.noinit)\s+(\d+).*",
     SIZECHECKCMD="$SIZETOOL -A -d $SOURCES",
@@ -69,19 +41,7 @@ env.Replace(
     PROGSUFFIX=".elf"
 )
 
-if "BOARD" in env:
-    env.Append(
-        CCFLAGS=[
-            "-mcpu=%s" % env.BoardConfig().get("build.cpu")
-        ],
-        LINKFLAGS=[
-            "-mcpu=%s" % env.BoardConfig().get("build.cpu")
-        ]
-    )
-
 env.Append(
-    ASFLAGS=env.get("CCFLAGS", [])[:],
-
     BUILDERS=dict(
         ElfToBin=Builder(
             action=env.VerboseAction(" ".join([
