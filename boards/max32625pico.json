@@ -7,7 +7,7 @@
   "frameworks": [
     "mbed"
   ],
-  "name": "MAX32625MBED",
+  "name": "MAX32625PICO",
   "upload": {
     "maximum_ram_size": 163840,
     "maximum_size": 524288,
@@ -16,6 +16,6 @@
       "mbed"
     ]
   },
-  "url": "http://www.maximintegrated.com/max32625pico",
+  "url": "https://www.maximintegrated.com/en/products/microcontrollers/MAX32625PICO.html",
   "vendor": "Maxim"
 }
