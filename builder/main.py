@@ -41,6 +41,10 @@ env.Replace(
     PROGSUFFIX=".elf"
 )
 
+# Allow user to override via pre:script
+if env.get("PROGNAME", "program") == "program":
+    env.Replace(PROGNAME="firmware")
+
 env.Append(
     BUILDERS=dict(
         ElfToBin=Builder(
@@ -68,10 +72,9 @@ env.Append(
     )
 )
 
-# Allow user to override via pre:script
-if env.get("PROGNAME", "program") == "program":
-    env.Replace(PROGNAME="firmware")
-
+if not env.get("PIOFRAMEWORK"):
+    env.SConscript("frameworks/_bare.py")
+    
 #
 # Target: Build executable and linkable firmware
 #
