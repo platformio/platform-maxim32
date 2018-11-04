@@ -4,6 +4,10 @@
     "f_cpu": "96000000L",
     "mcu": "max32620fthr"
   },
+  "debug": {
+    "jlink_device": "MAX32620",
+    "svd_path": "max32620.svd"
+  },
   "frameworks": [
     "mbed"
   ],
@@ -13,7 +17,8 @@
     "maximum_size": 2097152,
     "protocol": "mbed",
     "protocols": [
-      "mbed"
+      "mbed",
+      "jlink"
     ]
   },
   "url": "https://www.maximintegrated.com/en/products/microcontrollers/MAX32620FTHR.html",
