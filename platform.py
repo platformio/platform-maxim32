@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from platform import system
+
 from platformio.managers.platform import PlatformBase
 
 
@@ -31,3 +33,48 @@ class Maxim32Platform(PlatformBase):
 
         return PlatformBase.configure_default_packages(self, variables,
                                                        targets)
+
+    def get_boards(self, id_=None):
+        result = PlatformBase.get_boards(self, id_)
+        if not result:
+            return result
+        if id_:
+            return self._add_default_debug_tools(result)
+        else:
+            for key, value in result.items():
+                result[key] = self._add_default_debug_tools(result[key])
+        return result
+
+    def _add_default_debug_tools(self, board):
+        debug = board.manifest.get("debug", {})
+        upload_protocols = board.manifest.get("upload", {}).get(
+            "protocols", [])
+        if "tools" not in debug:
+            debug['tools'] = {}
+
+        for link in ("jlink", ):
+            if link not in upload_protocols or link in debug['tools']:
+                continue
+
+            if link == "jlink":
+                assert debug.get("jlink_device"), (
+                    "Missed J-Link Device ID for %s" % board.id)
+                debug['tools'][link] = {
+                    "server": {
+                        "package": "tool-jlink",
+                        "arguments": [
+                            "-singlerun",
+                            "-if", "SWD",
+                            "-select", "USB",
+                            "-device", debug.get("jlink_device"),
+                            "-port", "2331"
+                        ],
+                        "executable": ("JLinkGDBServerCL.exe"
+                                       if system() == "Windows" else
+                                       "JLinkGDBServer")
+                    },
+                    "onboard": link in debug.get("onboard_tools", [])
+                }
+
+        board.manifest['debug'] = debug
+        return board

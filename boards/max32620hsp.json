@@ -4,6 +4,10 @@
     "f_cpu": "96000000L",
     "mcu": "max32620"
   },
+  "debug": {
+    "jlink_device": "MAX32620",
+    "svd_path": "max32620.svd"
+  },
   "connectivity": [
     "bluetooth"
   ],
@@ -16,7 +20,8 @@
     "maximum_size": 2097152,
     "protocol": "mbed",
     "protocols": [
-      "mbed"
+      "mbed",
+      "jlink"
     ]
   },
   "url": "https://developer.mbed.org/platforms/MAX32620HSP/",
