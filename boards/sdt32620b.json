@@ -1,0 +1,21 @@
+{
+  "build": {
+    "cpu": "cortex-m4",
+    "f_cpu": "96000000L",
+    "mcu": "max32620iwg"
+  },
+  "frameworks": [
+    "mbed"
+  ],
+  "name": "SDT32620B",
+  "upload": {
+    "maximum_ram_size": 262144,
+    "maximum_size": 2097152,
+    "protocol": "mbed",
+    "protocols": [
+      "mbed"
+    ]
+  },
+  "url": "https://os.mbed.com/platforms/SDT32620B/",
+  "vendor": "Sigma Delta Technologies"
+}
