@@ -20,7 +20,7 @@ How to build PlatformIO based project
 .. code-block:: bash
 
     # Change directory to example
-    > cd platform-maxim32/examples/mbed-blink
+    > cd platform-maxim32/examples/mbed-rtos-sysinfo
 
     # Build project
     > platformio run
@@ -29,10 +29,10 @@ How to build PlatformIO based project
     > platformio run --target upload
 
     # Build specific environment
-    > platformio run -e max32600mbed
+    > platformio run -e max32625pico
 
     # Upload firmware for the specific environment
-    > platformio run -e max32600mbed --target upload
+    > platformio run -e max32625pico --target upload
 
     # Clean build files
     > platformio run --target clean

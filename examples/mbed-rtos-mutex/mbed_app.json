@@ -1,0 +1,7 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.cpu-stats-enabled": true
+        }
+    }
+}
