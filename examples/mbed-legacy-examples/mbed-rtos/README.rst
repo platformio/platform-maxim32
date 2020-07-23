@@ -10,7 +10,7 @@
     limitations under the License.
 
 How to build PlatformIO based project
-=====================================
+====================================
 
 1. `Install PlatformIO Core <http://docs.platformio.org/page/core.html>`_
 2. Download `development platform with examples <https://github.com/platformio/platform-maxim32/archive/develop.zip>`_
@@ -20,7 +20,7 @@ How to build PlatformIO based project
 .. code-block:: bash
 
     # Change directory to example
-    > cd platform-maxim32/examples/mbed-blink
+    > cd platform-maxim32/examples/mbed-legacy-examples/mbed-blink
 
     # Build project
     > platformio run

@@ -20,7 +20,7 @@ How to build PlatformIO based project
 .. code-block:: bash
 
     # Change directory to example
-    > cd platform-maxim32/examples/mbed-blink
+    > cd platform-maxim32/examples/mbed-legacy-examples/mbed-blink
 
     # Build project
     > platformio run
