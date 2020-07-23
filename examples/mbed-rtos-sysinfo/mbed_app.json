@@ -1,0 +1,7 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.sys-stats-enabled": true
+        }
+    }
+}
