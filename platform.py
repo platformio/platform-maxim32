@@ -33,7 +33,7 @@ class Maxim32Platform(PlatformBase):
                 if os.path.isfile(deprecated_boards_file):
                     with open(deprecated_boards_file) as fp:
                         if board in json.load(fp):
-                            self.packages["framework-mbed"]["version"] = "~6.51504.0"
+                            self.packages["framework-mbed"]["version"] = "^6.51504.0"
 
             upload_protocol = variables.get("upload_protocol", self.board_config(
                 board).get("upload.protocol", ""))
