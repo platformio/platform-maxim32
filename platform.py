@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import copy
 import json
 import os
 import platform
@@ -87,3 +88,22 @@ class Maxim32Platform(PlatformBase):
 
         board.manifest["debug"] = debug
         return board
+
+    def configure_debug_options(self, initial_debug_options, ide_data):
+        debug_options = copy.deepcopy(initial_debug_options)
+        server_executable = debug_options["server"]["executable"].lower()
+        adapter_speed = initial_debug_options.get("speed")
+        if adapter_speed:
+            if "jlink" in server_executable:
+                debug_options["server"]["arguments"].extend(
+                    ["-speed", adapter_speed]
+                )
+            elif "pyocd" in debug_options["server"]["package"]:
+                assert (
+                    adapter_speed.isdigit()
+                ), "pyOCD requires the debug frequency value in Hz, e.g. 4000"
+                debug_options["server"]["arguments"].extend(
+                    ["--frequency", "%d" % int(adapter_speed)]
+                )
+
+        return debug_options
