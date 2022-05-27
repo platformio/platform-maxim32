@@ -17,7 +17,7 @@ import json
 import os
 import platform
 
-from platformio.managers.platform import PlatformBase
+from platformio.public import PlatformBase
 
 
 class Maxim32Platform(PlatformBase):
@@ -41,11 +41,10 @@ class Maxim32Platform(PlatformBase):
             if upload_protocol == "cmsis-dap":
                 self.packages["tool-pyocd"]["type"] = "uploader"
 
-        return PlatformBase.configure_default_packages(self, variables,
-                                                       targets)
+        return super().configure_default_packages(variables, targets)
 
     def get_boards(self, id_=None):
-        result = PlatformBase.get_boards(self, id_)
+        result = super().get_boards(id_)
         if not result:
             return result
         if id_:
