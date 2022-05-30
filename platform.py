@@ -16,7 +16,7 @@ import json
 import os
 import platform
 
-from platformio.managers.platform import PlatformBase
+from platformio.public import PlatformBase
 
 
 class Maxim32Platform(PlatformBase):
@@ -40,11 +40,10 @@ class Maxim32Platform(PlatformBase):
             if upload_protocol == "cmsis-dap":
                 self.packages["tool-pyocd"]["type"] = "uploader"
 
-        return PlatformBase.configure_default_packages(self, variables,
-                                                       targets)
+        return super().configure_default_packages(variables, targets)
 
     def get_boards(self, id_=None):
-        result = PlatformBase.get_boards(self, id_)
+        result = super().get_boards(id_)
         if not result:
             return result
         if id_:
@@ -87,3 +86,14 @@ class Maxim32Platform(PlatformBase):
 
         board.manifest["debug"] = debug
         return board
+
+    def configure_debug_session(self, debug_config):
+        if debug_config.speed:
+            if "jlink" in (debug_config.server or {}).get("executable", "").lower():
+                debug_config.server["arguments"].extend(
+                    ["-speed", debug_config.speed]
+                )
+            elif "pyocd" in debug_config.server["package"]:
+                debug_config.server["arguments"].extend(
+                    ["--frequency", debug_config.speed]
+                )
