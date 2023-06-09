@@ -36,7 +36,7 @@
       "type": "framework",
       "optional": true,
       "owner": "platformio",
-      "version": "~6.60600.0"
+      "version": "~6.60900.0"
     },
     "tool-pyocd": {
       "type": "debugger",
