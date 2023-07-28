@@ -12,8 +12,6 @@ jobs:
           - "examples/mbed-rtos-blink-baremetal"
           - "examples/mbed-rtos-mutex"
           - "examples/mbed-rtos-sysinfo"
-          - "examples/mbed-legacy-examples/mbed-dsp"
-          - "examples/mbed-legacy-examples/mbed-rtos"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
